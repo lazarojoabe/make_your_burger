@@ -4,16 +4,18 @@
     <h1>HOME</h1>
     <p>Monte seu Burger</p>
     <p>Formulário</p>
-    
+    <BurgerForm/>
   </div>
 </template>
 
 <script>
   import Banner from "@/components/Banner.vue";
+  import BurgerForm from "@/components/BurgerForm.vue";
   export default {
     name: "Home",
     components: {
       Banner,
+      BurgerForm,
     },
   };
 </script>
