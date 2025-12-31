@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <Navbar :logo="logo_src" :alt="alt_name"/>
-    <router-view />
+    <router-view /> 
     <Footer />
   </div>
 </template>
@@ -34,6 +34,7 @@
     margin: 50px;
     min-height: 250px;
   }
+
   h1{
     text-align: center;
     margin-top: 20px; 
