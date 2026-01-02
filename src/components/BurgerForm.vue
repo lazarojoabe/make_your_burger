@@ -1,7 +1,7 @@
 <template>
     <p>Componente de mensagem</p>
     <div>
-        <form id="burger-form">
+        <form id="burger-form" @submit="createBurger">
             <div class="input-container">
                 <label for="nome">Nome do cliente:</label>
                 <input type="text" id="nome" name="nome" v-model="nome" placeholder="Digite o seu nome">
@@ -10,14 +10,14 @@
                 <label for="pao">Escolha o pão:</label>
                 <select name="" id="pao" v-model="pao">
                     <option value="">Selecione o seu pão</option>
-                    <option v-for="pao in paes" :key="pao.id" value="pao.tipo">{{ pao.tipo }}</option>
+                    <option v-for="pao in paes" :key="pao.id" :value="pao.tipo">{{ pao.tipo }}</option>
                 </select>
             </div>
             <div class="input-container">
                 <label for="carne">Escolha a carne:</label>
                 <select name="" id="carne" v-model="carne">
                     <option value="">Selecione o sua carne</option>
-                    <option v-for="carne in carnes" :key="carne.id" value="carne.id">{{carne.tipo}}</option>
+                    <option v-for="carne in carnes" :key="carne.id" :value="carne.tipo">{{carne.tipo}}</option>
                 </select>
             </div>
             <div id="opcionais-container" class="input-container">
@@ -58,6 +58,30 @@
             this.carnes = data.carnes;
             this.opcionaisData = data.opcionais;
             
+            console.log(data);
+          },
+
+          async createBurger(event){
+            event.preventDefault();
+
+            const burger = {
+              nome: this.nome,
+              pao: this.pao,
+              carne: this.carne,
+              opcionais: Array.from(this.opcionais),
+              status: "Solicitado"
+            };
+
+            const req = await fetch("http://localhost:3000/burgers", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json"
+              },
+              body: JSON.stringify(burger)
+            });
+
+            const data = await req.json();
+            this.msg = data.message;
             console.log(data);
           }
         },
