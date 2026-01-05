@@ -88,7 +88,7 @@
         "Bacon",
         "Tomate"
       ],
-      "status": "Solicitado"
+      "status": "Finalizado"
     },
     {
       "id": "5666",
@@ -99,28 +99,7 @@
         "Bacon",
         "Cebola roxa"
       ],
-      "status": "Solicitado"
-    },
-    {
-      "id": "38a1",
-      "nome": "teste",
-      "pao": "Italiano Branco",
-      "carne": "Alcatra",
-      "opcionais": [
-        "Tomate",
-        "Cebola roxa"
-      ],
-      "status": "Solicitado"
-    },
-    {
-      "id": "d903",
-      "nome": "teste12",
-      "pao": "Parmesão e Orégano",
-      "carne": "Alcatra",
-      "opcionais": [
-        "Salame"
-      ],
-      "status": "Solicitado"
+      "status": "Finalizado"
     },
     {
       "id": "4ea1",
@@ -131,6 +110,18 @@
         "Bacon"
       ],
       "status": "Solicitado"
+    },
+    {
+      "id": "ba18",
+      "nome": "mariazinha",
+      "pao": "3 Queijos",
+      "carne": "Alcatra",
+      "opcionais": [
+        "Bacon",
+        "Salame",
+        "Tomate"
+      ],
+      "status": "Em produção"
     }
   ]
 }
