@@ -87,6 +87,10 @@
             const data = await req.json();
             this.msg = `Pedido Número ${data.id} realizado com sucesso!`;
             
+            this.nome = "";
+            this.pao = "";
+            this.carne = "";
+            this.opcionais = [];
             setTimeout(() => {
               this.msg = "";
             }, 3000);
