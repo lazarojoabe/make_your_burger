@@ -14,13 +14,13 @@ export class BurgersService {
         pao: data.pao,
         carne: data.carne,
         opcionais: data.opcionais.join(','),
-        status: 'Solicitado';
+        status: 'Solicitado'
 
       }
      });
   }
 
-  findAll() {
+  async findAll() {
     const pedidos = await this.prisma.burger.findMany();
     return pedidos.map(pedido => ({
       ...pedido,
