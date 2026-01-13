@@ -104,7 +104,7 @@
 
         const res = await req.json()
 
-        this.msg = `Pedido atualizad com sucesso!`;
+        this.msg = `Pedido atualizado com sucesso!`;
             
         setTimeout(() => {
           this.msg = "";

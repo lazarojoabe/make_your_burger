@@ -22,6 +22,14 @@ async function main() {
       { tipo: 'Pepino', categoria: 'opcional' },
     ],
   });
+
+  await prisma.status.createMany({
+    data: [
+      { tipo: 'Solicitado' },
+      { tipo: 'Em produção' },
+      { tipo: 'Finalizado' },
+    ],
+  });
   console.log('Ingredientes inseridos!');
 }
 
