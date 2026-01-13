@@ -1,0 +1,28 @@
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Burger {
+  id        Int      @id @default(autoincrement())
+  nome      String
+  pao       String
+  carne     String
+  opcionais String   // Guardaremos como string para simplificar no SQLite
+  status    String   @default("Solicitado")
+}
+
+model Ingrediente {
+  id        Int    @id @default(autoincrement())
+  tipo      String
+  categoria String // 'pao', 'carne' ou 'opcional'
+}
+
+model Status {
+  id    Int    @id @default(autoincrement())
+  tipo  String
+}
